@@ -42,15 +42,13 @@ def triangle1(n):
         print(' ')
 
 def triangle2(n):
-    for i in range(n):
-        for j in range(i+1):
-            if n==1 or i==j:
-                print('*', end='')
-            if j<i:
-                print(' ', end=' ')
-            else:
-                print('*', end=' ')
-        print(' ')
+    if n==1:
+        print('* ')
+    else:
+        for i in range(n):
+            print(' ' * 2*(n-1-i), end='')
+            print('* ' * (i+1))
+    
 
 """
 EXERCICE 3 - Factorielle
@@ -92,12 +90,12 @@ TESTS
 """
 ex = input("Quel exos ? ")
 
-if ex=='1':
+#if ex=='1':
     
-if ex=='2':
+#if ex=='2':
     
-if ex=='3':
+#if ex=='3':
     
-if ex=='4':
+#if ex=='4':
     
-if ex=='5':
+#if ex=='5':

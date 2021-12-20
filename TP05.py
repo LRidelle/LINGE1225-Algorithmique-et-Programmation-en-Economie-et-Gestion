@@ -50,7 +50,7 @@ def predic(lst, mot):
     return dico
 
 """
-EXERCICE 4 - Nombre de messages FAUX
+EXERCICE 4 - Nombre de messages (FAUX)
 
 """
 l = [["Grumpy", "Garfield"],["Grumpy", "Lucifer"],["Lucifer", "Grumpy"],
@@ -93,4 +93,83 @@ def position(lst, lettre):
                 dico[tab[j]].append(lst[i])
     return dico
 
-#print(position(l2, "e"))
+"""
+EXERCICE SUPP 1 - Dictionnaires esperance de vie
+
+"""
+
+"""
+EXERCICE SUPP 2 - Dictionnaires nuage de mots
+
+"""
+def compte_mots(phrase, speciaux):
+    dico = {}
+    tab = phrase.split()
+    for i in range(len(tab)):
+        if tab[i] not in speciaux:
+            if tab[i] not in dico:
+                dico[tab[i]] = 1
+            else:
+                dico[tab[i]] += 1
+    return dico
+
+"""
+EXERCICE SUPP 3 - Creation de dictionnaires
+
+"""
+def create_dict(l):
+    dico = {}
+    for i in range(len(l)):
+        if l[i][0] not in dico:
+            dico[l[i][0]] = [l[i][1]]
+        else:
+            dico[l[i][0]].append(l[i][1])
+    return dico
+
+"""
+EXERCICE SUPP 4 - IMC
+
+"""
+def IMC(patients):
+    labels = {"maigreur": [],
+              "normal":   [],
+              "surpoids": [],
+              "obésité":  [] }
+    for nom, values in patients.items():
+        IMC = 10000 * values[1]/(values[0]*values[0])
+        if IMC < 18.5:
+            labels["maigreur"].append(nom)
+        elif IMC < 25:
+            labels["normal"].append(nom)
+        elif IMC < 30:
+            labels["surpoids"].append(nom)
+        else:
+            labels["obésité"].append(nom)
+    return labels
+
+"""
+EXERCICE SUPP 5 - Banques
+
+"""
+def Transfert(banque1, banque2):
+    dico = banque1
+    for k, v in banque2.items():
+        if k in banque1:
+            dico[k] += banque2[k]
+        else:
+            dico[k] = banque2[k]
+    return dico
+
+"""
+EXERCICE SUPP 6 - Cumul mandats
+
+"""
+def cumul(mandats):
+    l = []
+    lst = []
+    for v in mandats.values():
+        lst += v
+    for n in lst:
+        if lst.count(n) > 1 and n not in l:
+            l.append(n)
+    return l
