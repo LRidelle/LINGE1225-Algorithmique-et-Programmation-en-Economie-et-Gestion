@@ -18,34 +18,34 @@ class PauvreChien:
     def __init__(self,  taille, nom=""):
         if taille<=0:
             taille = 0
-        self.__taille = taille
-        self.__nom = nom
-
-    #Méthode pour comparer deux objets PauvreChien: A ne pas modifier
-    def __eq__(self,autre_chien):
-        return self.getNom()==autre_chien.getNom() and self.getTaille()==autre_chien.getTaille()
-
-    def __str__(self):
-        return "Nom: {} et Taille: {}".format(self.getNom(),self.getTaille())
+        self.taille = taille
+        self.nom = nom
 
     """
     GETTER
     """
     def getNom(self):
-        return self.__nom
+        return self.nom
     
     def getTaille(self):
-        return self.__taille
+        return self.taille
     
     """
     SETTER
     """
     def setNom(self, nom):
-        self.__nom = nom
+        self.nom = nom
     
     def setTaille(self, taille):
-        if taille>=self.__taille:
-            self.__taille = taille
+        if taille>=self.taille:
+            self.taille = taille
+
+    #Méthode pour comparer deux objets PauvreChien: A ne pas modifier
+    def __eq__(self, autre_chien):
+        return self.getNom()==autre_chien.getNom() and self.getTaille()==autre_chien.getTaille()
+
+    def __str__(self):
+        return "Nom: {} et Taille: {}".format(self.getNom(),self.getTaille())
         
 """
 Classe Maitre
@@ -55,11 +55,39 @@ class Maitre:
 
     #Constructeur
     def __init__(self,nom ,age, chien=None):
-        self.__nom = nom
+        self.nom = nom
         if age<=0:
             age = 0
-        self.__age = age
-        self.__chien = chien
+        self.age = age
+        self.chien = chien
+
+    """
+    GETTER
+    """
+    def getNom(self):
+        return self.nom
+    
+    def getAge(self):
+        return self.age
+    
+    def getChien(self):
+        return self.chien
+    
+    """
+    SETTER
+    """
+    def setNom(self, nom):
+        self.nom = nom
+        
+    def setAge(self, age):
+        if age>=0:
+            self.age = age
+    
+    def setChien(self, chien):
+        self.chien = chien
+        
+    def aUnChien(self):
+        return not self.chien is None
 
     #Méthode pour comparer deux objets Maitre: A ne pas modifier
     def __eq__(self,autre_maitre):
@@ -70,31 +98,3 @@ class Maitre:
             return "Nom: {}  Age: {} ".format(self.getNom(),self.getAge())
         else:
             return "Nom: {}  Age: {}  Chien: {}".format(self.getNom(),self.getAge(), self.getChien().getNom())
-    
-    """
-    GETTER
-    """
-    def getNom(self):
-        return self.__nom
-    
-    def getAge(self):
-        return self.__age
-    
-    def getChien(self):
-        return self.__chien
-    
-    """
-    SETTER
-    """
-    def setNom(self, nom):
-        self.__nom = nom
-        
-    def setAge(self, age):
-        if age>=0:
-            self.__age = age
-    
-    def setChien(self, chien):
-        self.__chien = chien
-        
-    def aUnChien(self):
-        return not self.__chien is None

@@ -14,19 +14,19 @@ Classe Voiture
 class Voiture:
 
     def __init__(self, vitesse=0):
-        self.__vitesse = 0
+        self.vitesse = 0
     
     def incre(self, vitesse=1):
-        if self.__vitesse + vitesse<=5 and vitesse>=0:
-            self.__vitesse += vitesse
+        if self.vitesse + vitesse<=5 and vitesse>=0:
+            self.vitesse += vitesse
     
     def decre(self, vitesse=1):
-        if self.__vitesse - vitesse>=-1 and vitesse>=0:
-            self.__vitesse -= vitesse
+        if self.vitesse - vitesse>=-1 and vitesse>=0:
+            self.vitesse -= vitesse
             
     def vitesse_actuelle(self):
-        return self.__vitesse
-
+        return self.vitesse
+    
     #A ne pas modifier
     def __str__(self):
         return 'Vitesse actuelle: {}'.format(self.vitesse_actuelle())
