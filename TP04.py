@@ -74,8 +74,7 @@ EXERCICE 4 - Meteo par regions
 
 """
 def meteo(lst1, lst2):
-    lst = [[0 for i in range(5)] for i in range(5)] 
-    #[[0 for x in range(len(lst2))] for y in range(len(lst2[0]))]
+    lst = [[0 for i in range(len(lst1))] for j in range(len(lst1))]
     for i in range(len(lst2)):
         for j in range(len(lst2[0])):
             lst[lst1[i][j][0]][lst1[i][j][1]] = lst2[i][j]
@@ -86,7 +85,6 @@ EXERCICE 5 - Average beers
 """
 def average(mat):
     pers, soiree = [], []
-    
     for i in range(len(mat)):
         moy_soiree = 0.0
         for j in range(len(mat[0])):
