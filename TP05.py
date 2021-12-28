@@ -58,14 +58,20 @@ l = [["Grumpy", "Garfield"],["Grumpy", "Lucifer"],["Lucifer", "Grumpy"],
 
 def message(lst):
     dicos = []
-    for i in range(len(lst)):
-        if lst[i][0] not in dicos:
-            dico = {}
-            dico['Auteur'] = lst[i][0]
-            dico[lst[i][1]] = 1
-            dicos.append(dico)
-        else:
-            return dicos
+    for i in lst:
+        already_in_dicos = False
+        for dic in dicos:
+            if i[0] == dic['Auteur']:
+                if i[1] in dic:
+                    dic[i[1]] += 1
+                else:
+                    dic[i[1]] = 1
+                already_in_dicos = True
+        if not already_in_dicos:
+            new_dico = {}
+            new_dico['Auteur'] = i[0]
+            new_dico[i[1]] = 1
+            dicos.append(new_dico)
     return dicos
 
 print(message(l))
