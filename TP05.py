@@ -40,9 +40,8 @@ def predic(lst, mot):
     dico = {}
     for i in range(len(lst)):
         tab = lst[i].split()
-        print(tab)
         for j in range(len(tab)):
-            tab[j] = "".join(u for u in tab[j] if u not in ("?", ".", ";", ":", "!", ","))
+            #tab[j] = "".join(u for u in tab[j] if u not in ("?", ".", ";", ":", "!", ","))
             if tab[j]==mot and not j==len(tab)-1 and tab[j+1] not in dico:
                 dico[tab[j+1]] = 1
             elif tab[j]==mot and not j==len(tab)-1 and tab[j+1] not in dico:
