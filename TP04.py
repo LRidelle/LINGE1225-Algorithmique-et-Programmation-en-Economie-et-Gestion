@@ -84,21 +84,19 @@ EXERCICE 5 - Average beers
 
 """
 def average(mat):
-    pers, soiree = [], []
+    pers = [0 for i in range(len(mat[0]))]
+    soiree = [0 for i in range(len(mat))]
+    
     for i in range(len(mat)):
-        moy_soiree = 0.0
         for j in range(len(mat[0])):
-            moy_soiree = moy_soiree + mat[i][j]
-        soiree.append(moy_soiree/len(mat[i]))
-    
-    
-    for i in range(len(mat[0])):
-        moy_pers = 0.0
-        col = list(zip(*mat))[i]
-        for j in range(len(col)):
-            moy_pers = moy_pers + col[j]
-        pers.append(moy_pers/len(col))
+            pers[j] += mat[i][j]# / len(mat)
+            soiree[i] += mat[i][j]# / len(mat[0])
+            
+    for i in range(len(pers)):
+        pers[i] = pers[i]/len(mat)
         
+    for i in range(len(soiree)):
+        soiree[i] = soiree[i]/len(mat[0])
     return [pers, soiree]
 
 """
