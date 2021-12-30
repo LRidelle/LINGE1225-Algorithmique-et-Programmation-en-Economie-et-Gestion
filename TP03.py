@@ -79,6 +79,30 @@ def merge_two_lists(lst1, lst2):
     return sorted(lst1+lst2)
 
 """
+EXERCICE SUPP 3 - Ajout Prenom
+
+"""
+def ajoutPrenom(liste, prenom):
+    if liste is None:
+        print [prenom]
+        return [prenom]
+    elif prenom in liste:
+        print(liste)
+        return liste
+    elif prenom not in liste:
+        liste.append(prenom)
+        liste.sort()
+        print(liste)
+        return liste
+
+"""
+EXERCICE SUPP 4 - Sous chaine
+
+"""
+def sousChaine(x, y):
+    return y in x
+
+"""
 TESTS
 
 """

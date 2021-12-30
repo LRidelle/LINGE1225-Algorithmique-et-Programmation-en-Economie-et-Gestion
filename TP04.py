@@ -100,6 +100,44 @@ def average(mat):
     return [pers, soiree]
 
 """
+EXERCICE SUPP 1 - Matrice identité
+
+"""
+def matriceIdentite(n):
+    mat = [[0 for i in range(n)] for j in range(n)]
+    for i in range(n):
+        for j in range(n):
+            if i==j:
+                mat[i][j]=1
+    return mat
+
+"""
+EXERCICE SUPP 2 - Max matrice
+
+"""
+def maxmatrice(mat):
+    max = mat[0][0]
+    for i in range(len(mat)):
+        for j in range(len(mat)):
+            if mat[i][j] >= max:
+                max = mat[i][j]
+    return max
+
+"""
+EXERCICE SUPP 3 - Sommes colonnes
+
+"""
+def colsomme(mat):
+    somme = []
+    for i in range(len(mat)):
+        for j in range(len(mat)):
+            if i==0:
+                somme.append(mat[i][j])
+            else:
+                somme[j] += mat[i][j]
+    return somme
+
+"""
 TESTS
 
 """
